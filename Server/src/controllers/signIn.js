@@ -15,7 +15,8 @@ const signIn = async (req, res) => {
         const accessToken = createAccessToken(user.uid);
         const refreshToken = createRefreshToken(user.uid);
         //4. Put the refresh token in the "database"
-        
+        user.token = refreshToken
+        await user.save()
         //5. Send token. Refresh as a cookie and access token as regular response
         sendRefreshToken(res, refreshToken);
         sendAccessToken(res, req, accessToken);

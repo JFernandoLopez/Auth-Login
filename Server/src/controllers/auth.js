@@ -13,7 +13,7 @@ const isAuth = (req) => {
 const auth = async (req, res) => {
     try {
         const userId= isAuth(req);
-        if(userId !== null ){
+        if(userId !== null){
             res.status(201).json({data: "this is protected data"})
         }
     } catch (error) {

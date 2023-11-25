@@ -1,14 +1,14 @@
 const {sign} = require("jsonwebtoken");
 
-const createAccessToken = (userId) => {
-    return sign({userId}, "secret_key", {
-        expiresIn: '15m'
+const createAccessToken = (uid) => {
+    return sign({uid}, "secret_key", {
+        expiresIn: "5m"
     })
 }
 
-const createRefreshToken = (userId) => {
-    return sign({userId}, "secret_key", {
-        expiresIn: '7d'
+const createRefreshToken = (uid) => {
+    return sign({uid}, "secret_key", {
+        expiresIn: "10m"
     })
 }
 

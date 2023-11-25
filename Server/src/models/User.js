@@ -30,9 +30,6 @@ module.exports = (sequelize) => {
         },
         token: {
             type: DataTypes.STRING,
-            set(value){
-                this.setDataValue(value)
-            },
             allowNull: true
         }
     }, {timestamps: false})

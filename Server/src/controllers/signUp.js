@@ -13,7 +13,7 @@ const signUp = async(req, res) => {
         //3. Insert the user in de data base
         const newUser = await User.create({userName, email, password: hashPassword, location, phoneNumber})
         res.status(201).json({message: "User Created"})
-        console.log(newUser)
+        console.log(newUser)    
     } catch (error) {
         res.status(400).json({error: error.message})
     }
